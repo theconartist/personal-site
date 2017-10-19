@@ -12,14 +12,14 @@ gulp.task('sass', (cb) => {
     gulp.src('src/styles.sass'),
   	sass(),
   	cleanCss(),
-  	gulp.dest('dist'),
+  	gulp.dest('docs'),
     livereload()
   ], cb);
 });
 
 gulp.task('js', () => {
   gulp.src('src/scripts.js')
-  .pipe(gulp.dest('dist'))
+  .pipe(gulp.dest('docs'))
   .pipe(livereload())
 });
 
@@ -27,7 +27,7 @@ gulp.task('js-prod', (cb) => {
 	pump([
         gulp.src('src/scripts.js'),
         babili(),
-        gulp.dest('dist')
+        gulp.dest('docs')
     ],
     cb
   );
@@ -36,14 +36,14 @@ gulp.task('js-prod', (cb) => {
 gulp.task('pug', () => {
 	gulp.src('src/index.pug')
 	.pipe(pug())
-	.pipe(gulp.dest('dist'))
+	.pipe(gulp.dest('docs'))
   .pipe(livereload())
 });
 
 gulp.task('image-min', () => {
 	gulp.src('src/images/**')
 	.pipe(imagemin())
-	.pipe(gulp.dest('dist/images'))
+	.pipe(gulp.dest('docs/images'))
   .pipe(livereload())
 });
 
