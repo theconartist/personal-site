@@ -39,14 +39,14 @@
     right: 0
     bottom: 0
 
-$s-breakpoint: calculate-rem(420px)
-$m-breakpoint: calculate-rem(675px)
-$l-breakpoint: calculate-rem(800px)
+$s-breakpoint: calculate-rem(320px)
+$m-breakpoint: calculate-rem(760px)
+$l-breakpoint: calculate-rem(850px)
 $wrapper-width: calculate-rem(960px)
 $yale-blue: #105787
-$ucla-blue: #a15555
+$ucla-blue: #5D55A1
 $antique-fuchsia: #A15599
-$air-force-blue-2: #5593A1
+$air-force-blue: #5593A1
 
 @include font-face(Didot, 'fonts/Didot/Didot')
 @include font-face(Didot, 'fonts/FontAwesome/FontAwesome')
@@ -61,6 +61,8 @@ body
   color: #fff
   margin: 0
 
+h1, h2, h3
+  font-weight: lighter
 h1, h2
   color: #000
   margin: calculate-rem(24px) 0
@@ -70,8 +72,18 @@ h1, h2
   @media (max-width: $s-breakpoint)
     @include font-size(30px)
 
+h3
+  margin: calculate-rem(30px) 0 calculate-rem(20px) 0
+  @include font-size(30px)
+  @media (max-width: $s-breakpoint)
+    @include font-size(26px)
+
 p
   margin: 0
+  line-height: 1.8125rem
+  @include font-size(16px)
+  @media (max-width: $s-breakpoint)
+    @include font-size(14px)
 
 img
   max-width: 100%
@@ -80,30 +92,28 @@ img
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5)
 
 .section
-  padding: calculate-rem(45px) 0
+  padding: calculate-rem(40px) 0
+  @media (max-width: $s-breakpoint)
+    padding: calculate-rem(20px) 0
 
 .wrapper
   margin: 0 auto
   max-width: $wrapper-width
-  @media (max-width: $m-breakpoint)
-    width: 80%
-  @media (max-width: $s-breakpoint)
+  @media (max-width: $wrapper-width)
     width: 90%
+
 
 .intro-box
   background-color: $yale-blue
-  position: relative
   width: 100%
   text-align: center
   padding: 0 15%
   display: flex
   align-items: center
-  @include font-size(16px)
   @media (max-width: $m-breakpoint)
     padding: calculate-rem(45px) 8%
 
 .intro-box__text
-  line-height: 1.8125rem
   @include font-size(16px)
   @media (max-width: $l-breakpoint)
     @include font-size(14px)
@@ -112,15 +122,62 @@ img
   @media (max-width: $s-breakpoint)
     @include font-size(14px)
 
+.service
+  position: relative
+  padding: 0 calculate-rem(70px) calculate-rem(50px) calculate-rem(30px)
+  overflow: hidden
+
+.service--bespoke
+  background-color: $ucla-blue
+  &:before
+    content: '\f1fc'
+    font-family: FontAwesome
+    @include font-size(144px)
+    color: rgba(255, 255, 255, 0.13)
+    right: -34px
+    top: -47px
+    position: absolute
+
+.service--backend
+  background-color: $antique-fuchsia
+  &:before
+    content: '\f1c0'
+    font-family: FontAwesome
+    @include font-size(120px)
+    color: rgba(255, 255, 255, 0.13)
+    right: -3px
+    top: -14px
+    position: absolute
+
+.service--cms
+  background-color: $air-force-blue
+  &:before
+    content: url('images/wordpress_logo.png')
+    opacity: 0.13
+    right: -24px
+    top: -32px
+    position: absolute
+
 .row
   display: flex
   flex-flow: row wrap
+
+.align-top
+  align-items: flex-start
 
 .col-2-1
   display: flex
   flex: 0 0 50%
   max-width: 50%
   @media (max-width: $m-breakpoint)
+    flex: 0 0 100%
+    max-width: 100%
+
+.col-3-1
+  display: flex
+  flex: 0 0 33.33%
+  max-width: 33.33%
+  @media (max-width: $wrapper-width)
     flex: 0 0 100%
     max-width: 100%
 
