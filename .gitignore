@@ -1,4 +1,4 @@
 design/
 node_modules/
-dist/*
-!dist/fonts
+docs/*
+!docs/fonts
