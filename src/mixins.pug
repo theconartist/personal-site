@@ -1,0 +1,12 @@
+mixin project(title, images, text, link)
+  .project
+    a(href= link target="_blank" rel="noopener")
+      h3.project__title= title
+    .row.row--inline
+      for path in images
+        .col-2-1
+          img(src= "images/" + path)
+    .project__wrapper
+      p.project__text= text
+      a.cf(href= link target="_blank" rel="noopener")
+        i.material-icons.project__link.cf keyboard_arrow_right

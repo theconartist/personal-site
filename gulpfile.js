@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
+const prefix = require('gulp-autoprefixer');
 const cleanCss = require('gulp-clean-css');
 const babili = require('gulp-babili');
 const pug = require('gulp-pug');
@@ -11,6 +12,7 @@ gulp.task('sass', (cb) => {
   pump([
     gulp.src('src/styles.sass'),
   	sass(),
+    prefix(),
   	cleanCss(),
   	gulp.dest('docs'),
     livereload()
@@ -25,19 +27,19 @@ gulp.task('js', () => {
 
 gulp.task('js-prod', (cb) => {
 	pump([
-        gulp.src('src/scripts.js'),
-        babili(),
-        gulp.dest('docs')
-    ],
-    cb
-  );
+      gulp.src('src/scripts.js'),
+      babili(),
+      gulp.dest('docs'),
+    ], cb);
 });
 
-gulp.task('pug', () => {
-	gulp.src('src/index.pug')
-	.pipe(pug())
-	.pipe(gulp.dest('docs'))
-  .pipe(livereload())
+gulp.task('pug', (cb) => {
+  pump([
+    gulp.src('src/index.pug'),
+  	pug(),
+  	gulp.dest('docs'),
+    livereload(),
+  ], cb);
 });
 
 gulp.task('image-min', () => {

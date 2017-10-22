@@ -50,7 +50,7 @@ $air-force-blue: #5593A1
 
 @include font-face(Didot, 'fonts/Didot/Didot')
 @include font-face(Didot, 'fonts/FontAwesome/FontAwesome')
-@include font-face(material, 'fonts/material/material')
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons')
 
 *, ::after, ::before
   -webkit-box-sizing: inherit
@@ -58,13 +58,12 @@ $air-force-blue: #5593A1
 
 body
   font-family: Didot
-  color: #fff
   margin: 0
 
 h1, h2, h3
   font-weight: lighter
+
 h1, h2
-  color: #000
   margin: calculate-rem(24px) 0
   @include font-size(36px)
   @media (max-width: $wrapper-width)
@@ -73,7 +72,7 @@ h1, h2
     @include font-size(30px)
 
 h3
-  margin: calculate-rem(30px) 0 calculate-rem(20px) 0
+  margin: 0
   @include font-size(30px)
   @media (max-width: $s-breakpoint)
     @include font-size(26px)
@@ -85,11 +84,25 @@ p
   @media (max-width: $s-breakpoint)
     @include font-size(14px)
 
+a
+  text-decoration: none
+  color: #fff
+
 img
   max-width: 100%
 
 .shadow
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5)
+
+.flex
+  display: flex
+
+.cf:before, .cf:after
+    content: " "
+    display: table
+
+.cf:after
+    clear: both
 
 .section
   padding: calculate-rem(40px) 0
@@ -102,14 +115,14 @@ img
   @media (max-width: $wrapper-width)
     width: 90%
 
-
 .intro-box
   background-color: $yale-blue
-  width: 100%
+  color: #fff
   text-align: center
   padding: 0 15%
   display: flex
   align-items: center
+  box-sizing: border-box
   @media (max-width: $m-breakpoint)
     padding: calculate-rem(45px) 8%
 
@@ -126,6 +139,10 @@ img
   position: relative
   padding: 0 calculate-rem(70px) calculate-rem(50px) calculate-rem(30px)
   overflow: hidden
+  color: #fff
+
+.service__title
+  margin: calculate-rem(30px) 0 calculate-rem(20px) 0
 
 .service--bespoke
   background-color: $ucla-blue
@@ -158,28 +175,55 @@ img
     top: -32px
     position: absolute
 
+.project
+  padding: 0 0 calculate-rem(40px) 0
+  color: #fff
+
+.project__title
+  text-align: center
+  padding: calculate-rem(30px) 0
+
+.project__text
+  margin: calculate-rem(60px) 0 calculate-rem(20px) 0
+
+.project__wrapper
+  max-width: calculate-rem(700px)
+  width: 80%
+  margin: 0 auto
+
+.project__link
+  float: right
+  @include font-size(48px)
+
+.section--projects .project
+  &:nth-of-type(1)
+    background-color: $ucla-blue
+  &:nth-of-type(2)
+    background-color: $antique-fuchsia
+  &:nth-of-type(3)
+    background-color: $air-force-blue
+
 .row
   display: flex
   flex-flow: row wrap
+
+.row--inline
+  @media (max-width: $m-breakpoint)
+    display: block
+    white-space: nowrap
+    overflow-x: scroll
+  .col-2-1
+    display: inline-block
 
 .align-top
   align-items: flex-start
 
 .col-2-1
-  display: flex
-  flex: 0 0 50%
   max-width: 50%
   @media (max-width: $m-breakpoint)
-    flex: 0 0 100%
     max-width: 100%
 
 .col-3-1
-  display: flex
-  flex: 0 0 33.33%
   max-width: 33.33%
   @media (max-width: $wrapper-width)
-    flex: 0 0 100%
     max-width: 100%
-
-.col--image-of-me
-  @include aspect-ratio(480px, 336px)

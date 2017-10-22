@@ -1,3 +1,5 @@
+include mixins.pug
+
 html(lang="en")
   head
     meta(charset="UTF-8")
@@ -9,10 +11,10 @@ html(lang="en")
     .wrapper
       section.section
         h1 Jacob Cons // Web Designer
-        .row.shadow
-          .col-2-1.col--image-of-me
-            img(src="images/jacob_cons.jpg")
+        .row
           .col-2-1
+            img(src="images/jacob_cons.jpg")
+          .flex.col-2-1
             .intro-box
               p.intro-box__text Nam porttitor blandit accumsan. Ut vel dictum sem, a pretium dui. In malesuada enim in dolor euismod, id commodo mi consectetur. Curabitur at vestibulum nisi. Nullam vehicula nisi velit. Mauris turpis nisl, molestie ut ipsum et, suscipit vehicula odio.
       section.section
@@ -20,16 +22,20 @@ html(lang="en")
         .row.align-top
           .col-3-1
             .service.service--bespoke
-              h3 Bespoke
+              h3.service__title Bespoke
               p Nam porttitor blandit accumsan. Ut vel dictum sem, a pretium dui. In malesuada enim in dolor euismod, id commodo mi consectetur. Curabitur at vestibulum nisi. Nullam vehicula nisi velit.
           .col-3-1
             .service.service--backend
-              h3 Backend
+              h3.service__title Backend
               p Nam porttitor blandit accumsan. Ut vel dictum sem, a pretium dui. In malesuada enim in dolor euismod, id commodo mi consectetur. Curabitur at vestibulum nisi. Nullam vehicula nisi velit. In malesuada enim in dolor euismod, id commodo mi consectetur.
           .col-3-1
             .service.service--cms
-              h3 CMS
+              h3.service__title CMS
               p Nam porttitor blandit accumsan. Ut vel dictum sem, a pretium dui. In malesuada enim in dolor euismod, id commodo mi consectetur. Curabitur at vestibulum nisi. Nullam vehicula nisi velit. In malesuada enim in dolor euismod, id commodo mi consectetur. Nam porttitor blandit accumsan. Ut vel dictum sem, a pretium dui.
-
+      section.section.section--projects
+        h2 Projects
+        +project("airstreamstudio.co.uk", ["airstream/index.png", "airstream/pricing.png", "airstream/events.png", "airstream/reviews.png"], "Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna. Ut laoreet sodales nisi, quis iaculis nulla iaculis vitae. Donec sagittis faucibus lacus eget blandit. Mauris vitae ultricies metus, at condimentum nulla. Donec quis ornare lacus. Etiam gravida mollis tortor quis porttitor.Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna. Ut laoreet sodales nisi, quis iaculis nulla iaculis vitae. Donec sagittis faucibus lacus eget blandit. Mauris vitae.", "http://www.airstreamstudio.co.uk")
+        +project("brightoncarpenter.co.uk", ["carpenter/kitchens.png", "carpenter/index.png", "carpenter/contact.png", "carpenter/storage.png"], "Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna. Ut laoreet sodales nisi, quis iaculis nulla iaculis vitae. Donec sagittis faucibus lacus eget blandit. Mauris vitae ultricies metus, at condimentum nulla. Donec quis ornare lacus. Etiam gravida mollis tortor quis porttitor.Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna. Ut laoreet sodales nisi, quis iaculis nulla iaculis vitae. Donec sagittis faucibus lacus eget blandit. Mauris vitae.", "http://www.brightoncarpenter.co.uk")
+        +project("therapykitchen.co.uk", ["therapy/cookery.png", "therapy/therapy.png", "therapy/contact.png", "therapy/kitchen_therapy.png"], "Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna. Ut laoreet sodales nisi, quis iaculis nulla iaculis vitae. Donec sagittis faucibus lacus eget blandit. Mauris vitae ultricies metus, at condimentum nulla. Donec quis ornare lacus. Etiam gravida mollis tortor quis porttitor.Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna. Ut laoreet sodales nisi, quis iaculis nulla iaculis vitae. Donec sagittis faucibus lacus eget blandit. Mauris vitae.", "http://www.therapykitchen.co.uk")
 
     script(src="scripts.js")
