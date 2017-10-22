@@ -31,21 +31,6 @@
 @mixin fit-text($smallest, $largest)
   font-size: calc(#{$smallest} + #{calculate-vw($smallest, $largest)})
 
-@mixin aspect-ratio($width, $height)
-  position: relative
-  &:before
-    display: block
-    content: ""
-    width: 100%
-    padding-top: ($height / $width) * 100%
-  img:first-child
-    width: 100%
-    position: absolute
-    top: 0
-    left: 0
-    right: 0
-    bottom: 0
-
 $s-breakpoint: calculate-rem(320px)
 $m-breakpoint: calculate-rem(760px)
 $l-breakpoint: calculate-rem(850px)
@@ -278,12 +263,16 @@ img
 
 .col-2-1
   max-width: 50%
+  flex: 0 0 50%
   @media (max-width: $m-breakpoint)
     max-width: 100%
+    flex: 0 0 100%
 
 .col-3-1
   max-width: 33.33%
+  flex: 0 0 33.33%
   @media (max-width: $wrapper-width)
     max-width: 100%
+    flex: 0 0 100%
 
 @import 'aos'
