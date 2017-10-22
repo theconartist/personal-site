@@ -2,6 +2,10 @@
 	$rem-size: $size / 16px
 	@return #{$rem-size}rem
 
+@function calculate-vw($smallest, $largest)
+  $vw: ((5 / 96) * ($largest - $smallest)) / 1px
+  @return #{$vw}vw
+
 @mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg)
 	$src: null
 
@@ -23,6 +27,9 @@
 @mixin font-size($size)
 	font-size: $size //Fallback in px
 	font-size: calculate-rem($size)
+
+@mixin fit-text($smallest, $largest)
+  font-size: calc(#{$smallest} + #{calculate-vw($smallest, $largest)})
 
 @mixin aspect-ratio($width, $height)
   position: relative
@@ -58,7 +65,7 @@ $air-force-blue: #5593A1
 
 body
   font-family: Didot
-  margin: 0
+  margin: 0 0 calculate-rem(200px) 0
 
 h1, h2, h3
   font-weight: lighter
@@ -114,6 +121,16 @@ img
   max-width: $wrapper-width
   @media (max-width: $wrapper-width)
     width: 90%
+
+.center
+  text-align: center
+
+.title
+  margin: calculate-rem(50px) 0
+  @include fit-text(36px, 72px)
+
+.sub-title
+  @include fit-text(24px, 48px)
 
 .intro-box
   background-color: $yale-blue
@@ -182,6 +199,7 @@ img
 .project__title
   text-align: center
   padding: calculate-rem(30px) 0
+  @include fit-text(20px, 30px)
 
 .project__text
   margin: calculate-rem(60px) 0 calculate-rem(20px) 0
