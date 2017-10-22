@@ -65,7 +65,9 @@ $air-force-blue: #5593A1
 
 body
   font-family: Didot
-  margin: 0 0 calculate-rem(200px) 0
+  margin: 0 0 calc(3vw + 100px) 0
+  @media (max-width: $s-breakpoint)
+    margin: 0 0 calculate-rem(120px) 0
 
 h1, h2, h3
   font-weight: lighter
@@ -113,34 +115,53 @@ img
 .section
   padding: calculate-rem(40px) 0
   @media (max-width: $s-breakpoint)
-    padding: calculate-rem(20px) 0
+    padding: 0
 
 .wrapper
   margin: 0 auto
   max-width: $wrapper-width
   @media (max-width: $wrapper-width)
     width: 90%
+  @media (max-width: $s-breakpoint)
+    width: 100%
 
 .center
   text-align: center
 
 .title
-  margin: calculate-rem(50px) 0
+  margin: calculate-rem(50px) calculate-rem(5px)
   @include fit-text(36px, 72px)
 
 .sub-title
+  margin: 0 calculate-rem(5px)
   @include fit-text(24px, 48px)
 
 .side-nav
   position: fixed
-  right: 20px
-  top: 40px
+  right: 2%
+  top: 60px
   text-align: right
+  z-index: 1
+  animation: float 3s ease-in-out infinite
+  @media (max-width: $wrapper-width)
+    display: none
+
+@keyframes float
+  0%
+    transform: translateY(0px)
+  50%
+    transform: translateY(20px)
+  100%
+    transform: translateY(0px)
 
 .side-nav__link
-  margin: calculate-rem(30px) 0
+  padding: calculate-rem(12px) 0
   display: block
   color: #000
+  transition: padding .4s , font-size .4s
+  &:hover
+    padding: calculate-rem(26px) 0
+    @include font-size(18px)
 
 .intro-box
   background-color: $yale-blue
@@ -224,6 +245,9 @@ img
   float: right
   color: #fff
   @include font-size(48px)
+  transition: transform .4s
+  &:hover
+    transform: translateX(5px)
 
 .section--projects .project
   &:nth-of-type(1)
@@ -257,3 +281,5 @@ img
   max-width: 33.33%
   @media (max-width: $wrapper-width)
     max-width: 100%
+
+@import 'aos'

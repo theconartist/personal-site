@@ -18,17 +18,23 @@
   },
   "homepage": "https://github.com/theconartist/theconartist.github.io#readme",
   "devDependencies": {
+    "browserify": "^14.5.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
-    "gulp-babili": "^0.1.4",
+    "gulp-babel-minify": "^0.2.0",
     "gulp-clean-css": "^3.9.0",
-    "gulp-fontgen": "^0.2.5",
+    "gulp-flatten": "^0.3.1",
     "gulp-imagemin": "^3.4.0",
     "gulp-livereload": "^3.8.1",
     "gulp-pug": "^3.3.0",
     "gulp-sass": "^3.1.0",
-    "gulp-uglify": "^3.0.0",
     "pump": "^1.0.2",
+    "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "aos": "^2.2.0",
+    "scroll": "^2.0.1",
+    "scroll-doc": "^0.2.0"
   }
 }
