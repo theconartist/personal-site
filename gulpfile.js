@@ -7,6 +7,9 @@ const pug = require('gulp-pug');
 const imagemin = require('gulp-imagemin');
 const pump = require('pump');
 const livereload = require('gulp-livereload');
+const browserify = require('browserify');
+const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
 
 gulp.task('sass', (cb) => {
   pump([
@@ -20,9 +23,12 @@ gulp.task('sass', (cb) => {
 });
 
 gulp.task('js', () => {
-  gulp.src('src/scripts.js')
-  .pipe(gulp.dest('docs'))
-  .pipe(livereload())
+  return browserify('src/scripts.js')
+    .bundle()
+    .pipe(source('src/scripts.js'))
+    .pipe(buffer())
+    .pipe(gulp.dest('docs'))
+    .pipe(livereload());
 });
 
 gulp.task('js-prod', (cb) => {

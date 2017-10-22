@@ -93,7 +93,6 @@ p
 
 a
   text-decoration: none
-  color: #fff
 
 img
   max-width: 100%
@@ -131,6 +130,17 @@ img
 
 .sub-title
   @include fit-text(24px, 48px)
+
+.side-nav
+  position: fixed
+  right: 20px
+  top: 40px
+  text-align: right
+
+.side-nav__link
+  margin: calculate-rem(30px) 0
+  display: block
+  color: #000
 
 .intro-box
   background-color: $yale-blue
@@ -198,6 +208,7 @@ img
 
 .project__title
   text-align: center
+  color: #fff
   padding: calculate-rem(30px) 0
   @include fit-text(20px, 30px)
 
@@ -211,6 +222,7 @@ img
 
 .project__link
   float: right
+  color: #fff
   @include font-size(48px)
 
 .section--projects .project

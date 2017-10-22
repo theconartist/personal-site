@@ -8,11 +8,15 @@ html(lang="en")
     link(rel="stylesheet" href="styles.css")
     title Document
   body
-
+    nav.side-nav
+      a.side-nav__link(href="#intro") Intro
+      a.side-nav__link(href="#services") Services
+      a.side-nav__link(href="#projects") Projects
+      a.side-nav__link(href="#contact") Contact
 
     .wrapper
       section.section
-        h1 Jacob Cons // Web Designer
+        h1#intro Jacob Cons // Web Designer
         .row
           .col-2-1
             img(src="images/jacob_cons.jpg")
@@ -20,7 +24,7 @@ html(lang="en")
             .intro-box
               p.intro-box__text Nam porttitor blandit accumsan. Ut vel dictum sem, a pretium dui. In malesuada enim in dolor euismod, id commodo mi consectetur. Curabitur at vestibulum nisi. Nullam vehicula nisi velit. Mauris turpis nisl, molestie ut ipsum et, suscipit vehicula odio.
       section.section
-        h2 Services
+        h2#services Services
         .row.align-top
           .col-3-1
             .service.service--bespoke
@@ -35,12 +39,12 @@ html(lang="en")
               h3.service__title CMS
               p Nam porttitor blandit accumsan. Ut vel dictum sem, a pretium dui. In malesuada enim in dolor euismod, id commodo mi consectetur. Curabitur at vestibulum nisi. Nullam vehicula nisi velit. In malesuada enim in dolor euismod, id commodo mi consectetur. Nam porttitor blandit accumsan. Ut vel dictum sem, a pretium dui.
       section.section.section--projects
-        h2 Projects
+        h2#projects Projects
         +project("airstreamstudio.co.uk", ["airstream/index.png", "airstream/pricing.png", "airstream/events.png", "airstream/reviews.png"], "Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna. Ut laoreet sodales nisi, quis iaculis nulla iaculis vitae. Donec sagittis faucibus lacus eget blandit. Mauris vitae ultricies metus, at condimentum nulla. Donec quis ornare lacus. Etiam gravida mollis tortor quis porttitor.Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna. Ut laoreet sodales nisi, quis iaculis nulla iaculis vitae. Donec sagittis faucibus lacus eget blandit. Mauris vitae.", "http://www.airstreamstudio.co.uk")
         +project("brightoncarpenter.co.uk", ["carpenter/kitchens.png", "carpenter/index.png", "carpenter/contact.png", "carpenter/storage.png"], "Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna. Ut laoreet sodales nisi, quis iaculis nulla iaculis vitae. Donec sagittis faucibus lacus eget blandit. Mauris vitae ultricies metus, at condimentum nulla. Donec quis ornare lacus. Etiam gravida mollis tortor quis porttitor.Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna. Ut laoreet sodales nisi, quis iaculis nulla iaculis vitae. Donec sagittis faucibus lacus eget blandit. Mauris vitae.", "http://www.brightoncarpenter.co.uk")
         +project("therapykitchen.co.uk", ["therapy/cookery.png", "therapy/therapy.png", "therapy/contact.png", "therapy/kitchen_therapy.png"], "Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna. Ut laoreet sodales nisi, quis iaculis nulla iaculis vitae. Donec sagittis faucibus lacus eget blandit. Mauris vitae ultricies metus, at condimentum nulla. Donec quis ornare lacus. Etiam gravida mollis tortor quis porttitor.Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna. Ut laoreet sodales nisi, quis iaculis nulla iaculis vitae. Donec sagittis faucibus lacus eget blandit. Mauris vitae.", "http://www.therapykitchen.co.uk")
       section.section.center
-        h1.title Do you like what you see?
+        h1#contact.title Do you like what you see?
         h2.sub-title jacobcons@gmail.com
 
     script(src="scripts.js")
