@@ -1,5 +1,2 @@
 design/
 node_modules/
-docs/*
-!docs/fonts
-!docs/CNAME
