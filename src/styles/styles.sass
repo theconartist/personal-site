@@ -50,10 +50,9 @@ $s-breakpoint: calculate-rem(320px)
 $m-breakpoint: calculate-rem(760px)
 $l-breakpoint: calculate-rem(850px)
 $wrapper-width: calculate-rem(960px)
-$yale-blue: #105787
-$ucla-blue: #5D55A1
-$antique-fuchsia: #A15599
-$air-force-blue: #5593A1
+$icon-color: #0b0b0b
+$red: hsl(0, 95%, 67%)
+$blue: hsl(228, 95%, 67%)
 
 @include font-face(Didot, 'fonts/Didot/Didot')
 @include font-face(Didot, 'fonts/FontAwesome/FontAwesome')
@@ -118,6 +117,7 @@ img
     padding: 0
 
 .wrapper
+  position: relative
   margin: 0 auto
   max-width: $wrapper-width
   @media (max-width: $wrapper-width)
@@ -138,21 +138,24 @@ img
 
 .side-nav
   position: fixed
-  right: 2%
-  top: 60px
-  text-align: right
+  left: 0
+  animation: xAxis 20s ease-in infinite
+
+.side-nav__nav
+  position: fixed
   z-index: 1
-  animation: float 3s ease-in-out infinite
-  @media (max-width: $wrapper-width)
+  top: 130px
+  animation: yAxis 20s ease-out infinite
+  @media (max-width: 1270px)
     display: none
 
-@keyframes float
-  0%
-    transform: translateY(0px)
+@keyframes xAxis
   50%
-    transform: translateY(20px)
-  100%
-    transform: translateY(0px)
+    transform: translateX(20px)
+
+@keyframes yAxis
+  50%
+    transform: translateY(-20px)
 
 .side-nav__link
   padding: calculate-rem(12px) 0
@@ -164,7 +167,7 @@ img
     @include font-size(18px)
 
 .intro-box
-  background-color: $yale-blue
+  background: linear-gradient(to bottom, $red 0%,$red 50%,$blue 50%,$blue 100%)
   color: #fff
   text-align: center
   padding: 0 15%
@@ -187,41 +190,44 @@ img
   position: relative
   padding: 0 calculate-rem(70px) calculate-rem(50px) calculate-rem(30px)
   overflow: hidden
-  color: #fff
+  color: #000
+  border-top: 1px solid #000
 
 .service__title
   margin: calculate-rem(30px) 0 calculate-rem(20px) 0
 
 .service--bespoke
-  background-color: $ucla-blue
   &:before
     content: '\f1fc'
     font-family: FontAwesome
     @include font-size(144px)
-    color: rgba(255, 255, 255, 0.13)
+    color: $icon-color
     right: -34px
     top: -47px
     position: absolute
+    @media (max-width: $l-breakpoint)
+      @include font-size(120px)
 
 .service--backend
-  background-color: $antique-fuchsia
   &:before
     content: '\f1c0'
     font-family: FontAwesome
     @include font-size(120px)
-    color: rgba(255, 255, 255, 0.13)
+    color: $icon-color
     right: -3px
-    top: -14px
+    top: -17px
     position: absolute
+    @media (max-width: $l-breakpoint)
+      @include font-size(100px)
 
 .service--cms
-  background-color: $air-force-blue
   &:before
     content: url('images/wordpress_logo.png')
-    opacity: 0.13
-    right: -24px
-    top: -32px
+    right: -28px
+    top: -34px
     position: absolute
+    @media (max-width: $l-breakpoint)
+      transform: scale(0.8)
 
 .project
   padding: 0 0 calculate-rem(40px) 0
@@ -251,11 +257,9 @@ img
 
 .section--projects .project
   &:nth-of-type(1)
-    background-color: $ucla-blue
+    background-color: $red
   &:nth-of-type(2)
-    background-color: $antique-fuchsia
-  &:nth-of-type(3)
-    background-color: $air-force-blue
+    background-color: $blue
 
 .row
   display: flex

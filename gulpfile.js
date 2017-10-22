@@ -23,14 +23,16 @@ gulp.task('sass', (cb) => {
   ], cb);
 });
 
-gulp.task('js', () => {
-  return browserify('src/scripts.js')
-    .bundle()
-    .pipe(source('src/scripts.js'))
-    .pipe(buffer())
-    .pipe(flatten())
-    .pipe(gulp.dest('docs'))
-    .pipe(livereload());
+gulp.task('js', (cb) => {
+  pump([
+    browserify('src/scripts.js').bundle(),
+    source('src/scripts.js'),
+    buffer(),
+    flatten(),
+    gulp.dest('docs'),
+    livereload(),
+  ], cb)
+
 });
 
 gulp.task('js-prod', (cb) => {
