@@ -40,6 +40,7 @@ $red: hsl(0, 95%, 67%)
 $blue: hsl(228, 95%, 67%)
 
 @include font-face(Didot, 'fonts/Didot/Didot')
+@include font-face(Cera, 'fonts/Cera/Cera')
 @include font-face(FontAwesome, 'fonts/FontAwesome/FontAwesome')
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons')
 
@@ -48,12 +49,13 @@ $blue: hsl(228, 95%, 67%)
   box-sizing: inherit
 
 body
-  font-family: Didot
+  font-family: Cera, sans-serif
   margin: 0 0 calc(3vw + 100px) 0
   @media (max-width: $s-breakpoint)
     margin: 0 0 calculate-rem(120px) 0
 
 h1, h2, h3
+  font-family: Didot, sans-serif
   font-weight: lighter
 
 h1, h2
@@ -72,13 +74,14 @@ h3
 
 p
   margin: 0
-  line-height: 1.8125rem
+  line-height: 2.125em
   @include font-size(16px)
   @media (max-width: $s-breakpoint)
     @include font-size(14px)
 
 a
   text-decoration: none
+  color: #000
 
 img
   max-width: 100%
@@ -119,7 +122,10 @@ img
 
 .sub-title
   margin: 0 calculate-rem(5px)
+  display: inline-block
   @include fit-text(24px, 48px)
+  &:hover
+    text-decoration: underline
 
 .side-nav
   position: fixed
@@ -173,19 +179,20 @@ img
 
 .service
   position: relative
-  padding: 0 calculate-rem(70px) calculate-rem(50px) calculate-rem(30px)
+  padding: 0 calculate-rem(70px) calculate-rem(20px) calculate-rem(30px)
   overflow: hidden
   color: #000
   border-top: 1px solid #000
 
+
 .service__title
   margin: calculate-rem(30px) 0 calculate-rem(20px) 0
 
-.service--bespoke
+.service--design
   &:before
     content: '\f1fc'
     font-family: FontAwesome
-    @include font-size(144px)
+    @include font-size(130px)
     color: $icon-color
     right: -34px
     top: -47px
@@ -197,7 +204,7 @@ img
   &:before
     content: '\f1c0'
     font-family: FontAwesome
-    @include font-size(120px)
+    @include font-size(110px)
     color: $icon-color
     right: -3px
     top: -17px
@@ -257,9 +264,6 @@ img
     overflow-x: scroll
   .col-2-1
     display: inline-block
-
-.align-top
-  align-items: flex-start
 
 .col-2-1
   max-width: 50%

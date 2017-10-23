@@ -37,10 +37,14 @@ gulp.task('js', (cb) => {
 
 gulp.task('js-prod', (cb) => {
 	pump([
-      gulp.src('src/scripts.js'),
-      minify(),
-      gulp.dest('docs'),
-    ], cb);
+    browserify('src/scripts.js').bundle(),
+    source('src/scripts.js'),
+    buffer(),
+    flatten(),
+    minify(),
+    gulp.dest('docs'),
+    livereload(),
+  ], cb);
 });
 
 gulp.task('pug', (cb) => {
@@ -63,7 +67,7 @@ gulp.task('watch', () => {
   livereload.listen();
   gulp.watch('src/styles/styles.sass', ['sass']);
   gulp.watch('src/scripts.js', ['js']);
-  gulp.watch('src/pug/index.pug', ['pug']);
+  gulp.watch('src/pug/*.pug', ['pug']);
   gulp.watch('src/images/**', ['image-min']);
 });
 

@@ -5,6 +5,7 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    link(rel="shortcut icon" href="favicon.png")
     link(rel="stylesheet" href="styles.css")
     title Jacob Cons // Web Designer
   body
@@ -23,31 +24,35 @@ html(lang="en")
             img(src="images/jacob_cons.jpg")
           .flex.col-2-1
             .intro-box
-              p.intro-box__text Nam porttitor blandit accumsan. Ut vel dictum sem, a pretium dui. In malesuada enim in dolor euismod, id commodo mi consectetur. Curabitur at vestibulum nisi. Nullam vehicula nisi velit. Mauris turpis nisl, molestie ut ipsum et, suscipit vehicula odio.
+              p.intro-box__text
+                | Hiya, I'm an
+                span.age 18
+                | year old web designer based in brighton who wants to help build your dream website. I'm currently on a gap year and saving a little money to go travelling so my rates are extra cheap (prices start from just £200)
 
       section.section
         h2#skills Skills
         .row.align-top
           .col-3-1
-            .service.service--bespoke
+            .service.service--design
               h3.service__title Design
-              p Nam porttitor blandit accumsan. Ut vel dictum sem, a pretium dui. In malesuada enim in dolor euismod, id commodo mi consectetur. Curabitur at vestibulum nisi. Nullam vehicula nisi velit.
+              p You'll have complete control over your bespoke design from the line-height to the layout. No templates, no restrictions.
           .col-3-1
             .service.service--backend
               h3.service__title Backend
-              p Nam porttitor blandit accumsan. Ut vel dictum sem, a pretium dui. In malesuada enim in dolor euismod, id commodo mi consectetur. Curabitur at vestibulum nisi. Nullam vehicula nisi velit. In malesuada enim in dolor euismod, id commodo mi consectetur.
+              p Whether you need contact forms, booking systems or an e-commerce site I've got you covered.
           .col-3-1
             .service.service--cms
               h3.service__title CMS
-              p Nam porttitor blandit accumsan. Ut vel dictum sem, a pretium dui. In malesuada enim in dolor euismod, id commodo mi consectetur. Curabitur at vestibulum nisi. Nullam vehicula nisi velit. In malesuada enim in dolor euismod, id commodo mi consectetur. Nam porttitor blandit accumsan. Ut vel dictum sem, a pretium dui.
+              p A content management system provides an easy to use client-friendly interface so you can edit all your content after the site is built.
 
       section.section.section--projects
         h2#projects Projects
-        +project("airstreamstudio.co.uk", ["airstream/index.png", "airstream/pricing.png", "airstream/events.png", "airstream/reviews.png"], "Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna. Ut laoreet sodales nisi, quis iaculis nulla iaculis vitae. Donec sagittis faucibus lacus eget blandit. Mauris vitae ultricies metus, at condimentum nulla. Donec quis ornare lacus. Etiam gravida mollis tortor quis porttitor.Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna. Ut laoreet sodales nisi, quis iaculis nulla iaculis vitae. Donec sagittis faucibus lacus eget blandit. Mauris vitae.", "http://www.airstreamstudio.co.uk")
-        +project("brightoncarpenter.co.uk", ["carpenter/kitchens.png", "carpenter/index.png", "carpenter/contact.png", "carpenter/storage.png"], "Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna. Ut laoreet sodales nisi, quis iaculis nulla iaculis vitae. Donec sagittis faucibus lacus eget blandit. Mauris vitae ultricies metus, at condimentum nulla. Donec quis ornare lacus. Etiam gravida mollis tortor quis porttitor.Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna. Ut laoreet sodales nisi, quis iaculis nulla iaculis vitae. Donec sagittis faucibus lacus eget blandit. Mauris vitae.", "http://www.brightoncarpenter.co.uk")
+        +project("airstreamstudio.co.uk", ["airstream/index.png", "airstream/pricing.png", "airstream/events.png", "airstream/reviews.png"], "Airstream studio is a vintage wedding photography booth and hence their site was to be incredibly image centric. We went with a full-width image banner that cross faded through photos and custom image sliders for each aspect of the booth e.g. interior, exterior, props. Some of the key features of the site included pulling in the latest reviews and overall star rating of the bussiness from their facebook page; a contact booking form used to make enquires and a live feed of their latest instagram and facebook posts.", "http://www.airstreamstudio.co.uk")
+        +project("brightoncarpenter.co.uk", ["carpenter/kitchens.png", "carpenter/index.png", "carpenter/contact.png", "carpenter/storage.png"], "brightoncarpenter.co.uk was outdated and cluttered with too many unnecessary graphics and sections. I showed the client my previous work and he loved my designs for airstream studio. We agreed on keeping the esscense of both his old site and airstream studio to bring it to the modern web.", "http://www.brightoncarpenter.co.uk")
 
       section.section.center
-        h1#contact.title(data-aos="fade-up") Do you like what you see?
-        h2.sub-title(data-aos="fade-up" data-aos-delay="50") jacobcons@gmail.com
+        h1#contact.title(data-aos="fade-up") Send me your idea @
+        a(href="mailto:jacobcons@gmail.com")
+          h2.sub-title(data-aos="fade-up" data-aos-delay="50") jacobcons@gmail.com
 
     script(src="scripts.js")
