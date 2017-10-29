@@ -36,8 +36,8 @@ $m-breakpoint: calculate-rem(760px)
 $l-breakpoint: calculate-rem(850px)
 $wrapper-width: calculate-rem(960px)
 $icon-color: #0b0b0b
-$red: hsl(0, 95%, 67%)
-$blue: hsl(228, 95%, 67%)
+$main-theme-color: #ee801f
+$secondary-theme-color: #2196F3
 
 @include font-face(Didot, 'fonts/Didot/Didot')
 @include font-face(Cera, 'fonts/Cera/Cera')
@@ -158,13 +158,13 @@ img
     @include font-size(18px)
 
 .intro-box
-  background: linear-gradient(to bottom, $red 0%,$red 50%,$blue 50%,$blue 100%)
   color: #fff
   text-align: center
   padding: 0 15%
   display: flex
   align-items: center
   box-sizing: border-box
+		background-color: $main-theme-color
   @media (max-width: $m-breakpoint)
     padding: calculate-rem(45px) 8%
 
@@ -248,10 +248,10 @@ img
     transform: translateX(5px)
 
 .section--projects .project
-  &:nth-of-type(1)
-    background-color: $red
-  &:nth-of-type(2)
-    background-color: $blue
+  &:nth-of-type(n)
+    background-color: $secondary-theme-color
+  &:nth-of-type(2n)
+    background-color: $main-theme-color
 
 .row
   display: flex
