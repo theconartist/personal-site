@@ -184,7 +184,6 @@ img
   color: #000
   border-top: 1px solid #000
 
-
 .service__title
   margin: calculate-rem(30px) 0 calculate-rem(20px) 0
 
@@ -257,13 +256,21 @@ img
   display: flex
   flex-flow: row wrap
 
-.row--inline
+.slider
+  display: block
+  white-space: nowrap
+  overflow-x: scroll
+
+.slider__wrapper
+  display: inline-block
+  max-width: 50%
+  flex: 0 0 50%
   @media (max-width: $m-breakpoint)
-    display: block
-    white-space: nowrap
-    overflow-x: scroll
-  .col-2-1
-    display: inline-block
+    max-width: 83%
+    flex: 0 0 83%
+  @media (max-width: $s-breakpoint)
+    max-width: 100%
+    flex: 0 0 100%
 
 .col-2-1
   max-width: 50%

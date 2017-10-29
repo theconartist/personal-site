@@ -68,8 +68,7 @@ gulp.task('watch', () => {
   gulp.watch('src/styles/styles.sass', ['sass']);
   gulp.watch('src/scripts.js', ['js']);
   gulp.watch('src/pug/*.pug', ['pug']);
-  gulp.watch('src/images/**', ['image-min']);
 });
 
-gulp.task('default', ['sass', 'pug', 'image-min', 'watch', 'js']);
-gulp.task('prod', ['default', 'js-prod']);
+gulp.task('default', ['sass', 'pug', 'watch', 'js']);
+gulp.task('prod', ['default', 'js-prod', 'image-min']);
