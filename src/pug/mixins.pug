@@ -2,10 +2,16 @@ mixin project(title, images, text, link)
   .project
     a(href= link target="_blank" rel="noopener")
       h3.project__title= title
-    .row.slider
-      for path in images
-        .slider__wrapper
-          img(src= "images/" + path)
+    -if (images.length === 1)
+      .row.slider.slider--single
+        for path in images
+          .slider__wrapper.slider__wrapper--single
+            img.slider__image(src= "images/" + path)
+    -else
+      .row.slider
+        for path in images
+          .slider__wrapper
+            img.slider__image(src="images/" + path)
     .project__wrapper
       p.project__text= text
       a.cf(href= link target="_blank" rel="noopener")

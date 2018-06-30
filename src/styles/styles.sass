@@ -259,18 +259,27 @@ img
 .slider
   display: block
   white-space: nowrap
-  overflow-x: scroll
+  overflow-x: auto
+
 
 .slider__wrapper
   display: inline-block
-  max-width: 50%
-  flex: 0 0 50%
-  @media (max-width: $m-breakpoint)
-    max-width: 83%
-    flex: 0 0 83%
+  max-width: 83%
+  flex: 0 0 83%
+  height: calculate-rem(380px)
   @media (max-width: $s-breakpoint)
     max-width: 100%
     flex: 0 0 100%
+
+.slider__wrapper--single
+  max-width: 100%
+  flex: 0 0 100%
+
+.slider__image
+  width: 100%
+  height: 100%
+  object-fit: cover
+  object-position: 0 0
 
 .col-2-1
   max-width: 50%
